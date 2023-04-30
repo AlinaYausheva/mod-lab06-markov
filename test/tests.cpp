@@ -4,7 +4,7 @@
 
 TEST(TestCaseName1, TestName1) {
     std::string txt = ReadFile("text.txt");
-    TextGenerator gen = TextGenerator(2,100);
+    TextGenerator gen = TextGenerator(2, 100);
     gen.GenerationText(txt);
 
     for (prefix pr : gen.Prefixes) {
@@ -19,7 +19,7 @@ TEST(TestCaseName2, TestName2) {
 
     for (prefix pr : gen.Prefixes) {
         EXPECT_EQ(4, pr.size());
-    }  
+    }
 }
 
 TEST(TestCaseName3, TestName3) {
@@ -54,7 +54,7 @@ TEST(TestCaseName5, TestName5) {
     prefix pr1;
     pr1.push_back("моя");
     pr1.push_back("старуха");
-    int index = rand() % gen.statetab[pr1].size();
+    int index = rand_r() % gen.statetab[pr1].size();
 
     EXPECT_EQ("бунтует.", gen.statetab[pr1].at(index));
 }
