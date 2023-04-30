@@ -1,3 +1,4 @@
+// Copyright 2021 GHA Test Team
 #include "generator.h"
 
 TextGenerator::TextGenerator() {
@@ -22,7 +23,7 @@ void TextGenerator::CreateStatetab(std::vector<std::string> words) {
         else
             statetab[pr];
 
-        if(statetab[pr].size()<=1)
+        if (statetab[pr].size() <= 1)
             Prefixes.push_back(pr);
     }
 }
@@ -38,13 +39,13 @@ std::string TextGenerator::GenerationText(std::string text) {
     int index;
     for (int i = 0; i < maxGen - prefixNum; i++) {
         if (statetab[pr].size() == 0) {
-            index = rand() % statetab.size() - 1;
+            index = rand_r() % statetab.size() - 1;
             pr = Prefixes[index];
             for (int j = 0; j < prefixNum; j++) {
                 result += pr[j] + " ";
             }
         }
-        index = rand() % statetab[pr].size();
+        index = rand_r() % statetab[pr].size();
         std::string nextWord = statetab[pr].at(index);
         result += nextWord + " ";
         pr.pop_front();
@@ -57,11 +58,9 @@ std::string TextGenerator::GenerationText(std::string text) {
 std::string ReadFile(std::string title) {
     std::string text;
     std::ifstream reading(title);
-    if (reading.is_open())
-    {
+    if (reading.is_open()) {
         std::string line;
-        while (std::getline(reading, line))
-        {
+        while (std::getline(reading, line)) {
             text += line + " ";
         }
     }
@@ -72,8 +71,7 @@ std::string ReadFile(std::string title) {
 void WriteFile(std::string info) {
     std::ofstream writing("result.txt");
 
-    if (writing.is_open())
-    {
+    if (writing.is_open()) {
         writing << info << std::endl;
     }
     writing.close();
