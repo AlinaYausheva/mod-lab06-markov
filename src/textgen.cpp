@@ -1,5 +1,5 @@
 // Copyright 2021 GHA Test Team
-#include "generator.h"
+#include "textgen.h"
 
 TextGenerator::TextGenerator() {
     prefixNum = NPREF;
