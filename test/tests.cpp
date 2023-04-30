@@ -54,7 +54,7 @@ TEST(TestCaseName5, TestName5) {
     prefix pr1;
     pr1.push_back("моя");
     pr1.push_back("старуха");
-    int index = rand_r() % gen.statetab[pr1].size();
+    int index = std::rand() % gen.statetab[pr1].size();
 
     EXPECT_EQ("бунтует.", gen.statetab[pr1].at(index));
 }
