@@ -1,6 +1,6 @@
 // Copyright 2021 GHA Test Team
 #include <gtest/gtest.h>
-#include "generator.h"
+#include "textgen.h"
 
 TEST(TestCaseName1, TestName1) {
     std::string txt = ReadFile("text.txt");
