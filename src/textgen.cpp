@@ -81,9 +81,9 @@ std::vector<std::string> SplitText(std::string text) {
     std::vector<std::string> words;
     std::string word = "";
     for (int i = 0; i < text.size(); i++) {
-        if (text[i] != ' ') {
+        if ((text[i] != ' ') && (text[i] != '\r')) {
             word += text[i];
-        } else {
+        } else if (text[i] == ' ') {
             words.push_back(word);
             word = "";
         }
