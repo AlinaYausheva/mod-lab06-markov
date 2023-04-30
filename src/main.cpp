@@ -1,6 +1,6 @@
 // Copyright 2021 GHA Test Team
 #include <iostream>
-#include "generator.h"
+#include "textgen.h"
 
 int main() {
     std::string txt;
