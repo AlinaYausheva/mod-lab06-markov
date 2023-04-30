@@ -54,7 +54,7 @@ TEST(TestCaseName5, TestName5) {
     prefix pr1;
     pr1.push_back("killed");
     pr1.push_back("the");
-    int index = rand() % gen.statetab[pr1].size();
+    int index = std::rand() % gen.statetab[pr1].size();
 
     EXPECT_EQ("rat", gen.statetab[pr1].at(index));
 }
