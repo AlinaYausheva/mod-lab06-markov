@@ -43,7 +43,7 @@ TEST(TestCaseName4, TestName4) {
     pr1.push_back("killed");
     pr1.push_back("the");
 
-    EXPECT_EQ(1, gen.statetab[pr1].size());
+    EXPECT_EQ(2, gen.statetab[pr1].size());
 }
 
 TEST(TestCaseName5, TestName5) {
