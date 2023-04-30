@@ -23,53 +23,53 @@ TEST(TestCaseName2, TestName2) {
 }
 
 TEST(TestCaseName3, TestName3) {
-    std::string txt = ReadFile("text.txt");
+    std::string txt = ReadFile("text2.txt");
     TextGenerator gen = TextGenerator(2, 100);
     gen.GenerationText(txt);
 
     prefix pr1;
-    pr1.push_back("Пришел");
-    pr1.push_back("невод");
+    pr1.push_back("is");
+    pr1.push_back("the");
 
-    EXPECT_EQ(3, gen.statetab[pr1].size());
+    EXPECT_EQ(5, gen.statetab[pr1].size());
 }
 
 TEST(TestCaseName4, TestName4) {
-    std::string txt = ReadFile("text.txt");
+    std::string txt = ReadFile("text2.txt");
     TextGenerator gen = TextGenerator(2, 100);
     gen.GenerationText(txt);
 
     prefix pr1;
-    pr1.push_back("тридцать");
-    pr1.push_back("лет");
+    pr1.push_back("killed");
+    pr1.push_back("the");
 
-    EXPECT_EQ(2, gen.statetab[pr1].size());
+    EXPECT_EQ(1, gen.statetab[pr1].size());
 }
 
 TEST(TestCaseName5, TestName5) {
-    std::string txt = ReadFile("text.txt");
+    std::string txt = ReadFile("text2.txt");
     TextGenerator gen = TextGenerator(2, 100);
     gen.GenerationText(txt);
 
     prefix pr1;
-    pr1.push_back("моя");
-    pr1.push_back("старуха");
-    //int index = std::rand() % gen.statetab[pr1].size();
+    pr1.push_back("killed");
+    pr1.push_back("the");
+    int index = rand() % gen.statetab[pr1].size();
 
-    EXPECT_EQ("бунтует.", gen.statetab[pr1].at(0));
+    EXPECT_EQ("rat", gen.statetab[pr1].at(index));
 }
 
 TEST(TestCaseName6, TestName6) {
-    std::string txt = ReadFile("text.txt");
+    std::string txt = ReadFile("text2.txt");
     TextGenerator gen = TextGenerator(2, 100);
     gen.GenerationText(txt);
 
     prefix pr1;
-    pr1.push_back("государыня");
-    pr1.push_back("рыбка!");
+    pr1.push_back("is");
+    pr1.push_back("the");
     int index = 1;
 
-    EXPECT_EQ("Пуще", gen.statetab[pr1].at(index));
+    EXPECT_EQ("malt", gen.statetab[pr1].at(index));
 }
 
 TEST(TestCaseName7, TestName7) {
