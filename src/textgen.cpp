@@ -39,13 +39,13 @@ std::string TextGenerator::GenerationText(std::string text) {
     int index;
     for (int i = 0; i < maxGen - prefixNum; i++) {
         if (statetab[pr].size() == 0) {
-            index = rand_r() % statetab.size() - 1;
+            index = std::rand() % statetab.size() - 1;
             pr = Prefixes[index];
             for (int j = 0; j < prefixNum; j++) {
                 result += pr[j] + " ";
             }
         }
-        index = rand_r() % statetab[pr].size();
+        index = std::rand() % statetab[pr].size();
         std::string nextWord = statetab[pr].at(index);
         result += nextWord + " ";
         pr.pop_front();
