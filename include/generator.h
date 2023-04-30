@@ -1,3 +1,4 @@
+// Copyright 2021 GHA Test Team
 #pragma once
 #include <iostream>
 #include<string>
@@ -10,7 +11,7 @@
 typedef std::deque<std::string> prefix;
 
 class TextGenerator {
-public:
+ public:
     static const int NPREF = 2;
     static const int MAXGEN = 1000;
     int prefixNum;
